@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج مشاهدة المباراة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #d32f2f;
+            color: white;
+            text-align: right;
+            padding: 15px;
+        }
+
+        .menu-button {
+            background-color: #b71c1c;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .menu-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #d32f2f;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 999;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #b71c1c;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .main-content {
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>المباراة</h1>
+    </header>
+
+    <button class="menu-button" onclick="openMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <span class="close-button" onclick="closeMenu()">×</span>
+        <a href="#home">الرئيسية</a>
+        <a href="#video">الافلام</a>
+        <a href="#info">تفاصيل المباراة</a>
+        <a href="#contact">تواصل معنا</a>
+    </div>
+
+    <div class="main-content" id="home">
+        <h2>مرحبًا بك في برنامج مشاهدة المباراة</h2>
+        <p>اضغط على القائمة لعرض الأقسام.</p>
+    </div>
+
+    <script>
+        function openMenu() {
+            document.getElementById('sidebar').style.width = '250px';
+        }
+
+        function closeMenu() {
+            document.getElementById('sidebar').style.width = '0';
+        }
+    </script>
+
+</body>
+</html>
